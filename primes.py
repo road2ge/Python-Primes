@@ -6,62 +6,6 @@ from __future__ import print_function
 primelist = [2,3,5,7,11,13,17,19,23,29,31,37]
 twinprimelist = []
 
-def factor_v2(a,b,c):
-    '''Remember, adding a negative number is subtracting a positive, and
-    subtracting a negative number is adding a positive.
-    If you get decimals, it's probably not easily factorable.'''
-    
-    discriminant = (b ** 2) - (4 * a * c)
-    
-    if discriminant < 0:
-    
-        return print('This equation has no real solutions, meaning it is prime.')
-    
-    cringe1 = (-b + sqrt(discriminant)) / (2 * a)
-    cringe2 = (-b - sqrt(discriminant)) / (2 * a)
-    
-    # When the discriminant is 0, there is only one x-int.
-    if discriminant == 0:
-    
-        return print('(x + ', cringe1, ')^2', sep='')
-    
-    # Just lots of factoring conditionals.
-    elif a == 1:
-    
-        return print('(x + ', cringe1, ')(x + ', cringe2, ')', sep = '')
-    
-    elif a > 1:
-    
-        if cringe1 % a == 0:
-    
-            return print('(x + ', cringe1/a, ')(x + ', cringe2, ')', sep = '')
-    
-        elif cringe2 % a == 0:
-    
-            return print('(x + ', cringe1, ')(x + ', cringe2/a, ')', sep = '')
-    
-    elif a == -1:
-    
-        return print('-1*(x + ', cringe1, ')(x + ', cringe2, ')', sep = '')
-    
-    elif a < -1:
-    
-        if cringe1 % a == 0:
-    
-            return print('(x + ', cringe1/a, ')(', a, 'x + ', cringe2, ')', sep = '')
-    
-        elif cringe2 % a == 0:
-    
-            return print('(x + ', cringe1, ')(', a, 'x + ', cringe2/a, ')', sep = '')
-    
-    else:
-    
-        return print('Dude, you try this one yourself.')
-        
-def sqrt(number):
-    
-    return number ** .5
-
 def prime_factor(number,human=True):
     '''Get the prime factorization of a number! Pretty neat, except not recommended
     to exceed 100,000,000.'''
