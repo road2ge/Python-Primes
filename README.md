@@ -1,2 +1,2 @@
 # Python-Primes
-I made this for a project, but I thought the entire idea was interesting.
+I originally made this for a school project, but I thought the entire idea was interesting.
